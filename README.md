@@ -9,6 +9,7 @@ Portfolio of myself, my projects and ways to contact me.
 
 # Design
 FrontEnd with HTML, CSS and a little bit of JavaScript.
+BackEnd with Django (Python).
 
 <img width="631" alt="image" src="https://user-images.githubusercontent.com/58309185/211678740-68496e57-83d0-4bef-95f4-4fc6d13b5e92.png">
 
