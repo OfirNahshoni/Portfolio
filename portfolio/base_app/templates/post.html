@@ -1,151 +1,26 @@
 {% extends 'base_layout.html' %}
 {% load static %}
-{% block title %}Vehicles Market{% endblock %}
+{% block title %}Notes App{% endblock %}
     
 {% block content %}
-
-    <!-- Diagrams -->
     <section class="s1">
-        <div class="main-container">
-            <!-- Title -->
-            <div class="greeting-wrapper">
-                <h1>Notes Master - Flask Web application</h1>
-            </div>
+    <div class="main-container">
+        <h1>Post Title</h1>
+        
+        <hr>
+        
+        <img src="{% static 'images/notes_master_home.png' %}" width="600" height="300">
+        
+        <hr>
 
-            <!-- Introduction - Image & Description -->
-            {% comment %} <div class="intro-wrapper-post">
-                <!-- Image\s -->
-                <div class="col-post">
-                    <img id="page-post-img" src="{% static 'images/notes_master_login.png' %}">
-                    <h4>Press Color to Change Theme</h4>
-                    
-                    <p id="settings-note">
-                        Themes settings will be saved for<br />
-                        your next visit
-                    </p>
-                </div>
-
-                <div class="col-post">
-                    <img id="page-post-img" src="{% static 'images/notes_master_login.png' %}">
-                    <h4>Press Color to Change Theme</h4>
-                    
-                    <p id="settings-note">
-                        Themes settings will be saved for<br />
-                        your next visit
-                    </p>
-                </div>
-
-                <div class="col-post">
-                    <img id="page-post-img" src="{% static 'images/notes_master_login.png' %}">
-                    <h4>Press Color to Change Theme</h4>
-                    
-                    <p id="settings-note">
-                        Themes settings will be saved for<br />
-                        your next visit
-                    </p>
-                </div>
-            </div> {% endcomment %}
-        </div>
-    </section>
-
-    <!-- Pages of the website -->
-    <section class="s2">
-        <div class="main-container">
-            {% comment %} <h3 style="text-align: center;">Notes Master</h3> {% endcomment %}
-            <!-- Posts of my projects -->
-            <div class="post-wrapper">
-                <!-- First post -->
-                <div>
-                    <div class="post">
-                        <img class="thumbnail-pp" src="{% static 'images/notes_master_login.png' %}">
-                        <div class="post-preview">
-                            <h6 class="post-title">Login</h6>
-                            <p class="post-content">
-                                The first page of first visitor<br />
-                                would be login page. with the library<br />
-                                flask_login and decorators if you are not<br />
-                                registered you could not go to home page.<br />
-                                You can only login or sign up.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Second post -->
-                <div>
-                    <div class="post">
-                        <img class="thumbnail-pp" src="{% static 'images/notes_master_signup.png' %}">
-                        <div class="post-preview">
-                            <h6 class="post-title">Sign Up</h6>
-                            <p class="post-content">
-                                Flask Form for registeration with wtforms library.<br />
-                                Validation with "wtforms.validators" module.
-                                After pressing submit, the fields<br />
-                                would be saved to the database.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Third post -->
-                <div>
-                    <div class="post">
-                        <img class="thumbnail-pp" src="{% static 'images/notes_master_home.png' %}">
-                        <div class="post-preview">
-                            <h6 class="post-title">Home</h6>
-                            <p class="post-content">
-                                Home page is where you can add a note,<br />
-                                and it would save it to the database.<br />
-                                The home page will show you all your saved<br />
-                                notes one by one in a beautiful list.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Fourth post -->
-                <div>
-                    <div class="post">
-                        <img class="thumbnail-pp" src="{% static 'images/notes_master_profile.png' %}">
-                        <div class="post-preview">
-                            <h6 class="post-title">User Profile</h6>
-                            <p class="post-content">
-                                Some text descrition.<br />
-                                Another text here..
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Fifth post -->
-                <div>
-                    <div class="post">
-                        <img class="thumbnail-pp" src="{% static 'images/notes_master_edit_profile.png' %}">
-                        <div class="post-preview">
-                            <h6 class="post-title">Edit User Profile</h6>
-                            <p class="post-content">
-                                Some text descrition.<br />
-                                Another text here..
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- end div "post-wrapper" -->
-        </div>
-    </section>
-
-    <section class="s1">
-        <div class="main-container" style="align-items: center;">
-            {% comment %} <form id="contact-form">
-                <div class="buttons-messages-tools">
-                </div>
-            </form> {% endcomment %}
-            <div  style="margin: auto;">
-                <a href="{% url 'home' %}">
-                    <button class="btn btn-primary">
-                        Home  
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
-                            <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z"/>
-                        </svg>
-                    </button>
-                </a>
-            </div>
-        </div>
-    </section>
+        <p>
+            Web application - Backend with Flask
+            and Frontend with HTML and little bit of JavaScript.
+            On the Backend side I used login_required decorate to
+            authentication and the flask_login module of Flask.
+            All the WT-Forms (Flask Forms) and the validation
+            was done with wtforms.validators module.
+        </p>
+    </div>
+</section>
 {% endblock %}

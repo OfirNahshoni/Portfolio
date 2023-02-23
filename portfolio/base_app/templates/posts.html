@@ -1,7 +1,43 @@
 {% extends 'base_layout.html' %}
-
+{% load static %}
 {% block title %} Posts {% endblock %}
 
 {% block content %}
-    <h2>Posts Page<h2/>
+    <section class="s1">
+        <div class="main-container">
+            <!-- Title -->
+            <div class="greeting-wrapper">
+                <h1>There are all my projects</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="s2">
+        <div class="main-container">
+            <div class="post-wrapper">
+
+                <!-- Loop through posts -->
+                {% for post in posts %}
+                    <div>
+                        <div class="post">
+                            <img class="thumbnail" src="{% static 'images/dash.png' %}">
+                            <div class="post-preview">
+                                <h6 class="post-title">{{ post.headline }}</h6>
+                                <p class="post-content">{{ post.sub_headline }}</p>
+                                <hr>
+                                <a href="{% url 'post' %}">Read More</a>
+                                <hr>
+                                <a target="_blank" href="{{ post.repo_link }}">
+                                    GitHub Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <h2>No posts found</h2>
+                {% endfor %}
+                
+            </div> <!-- end div "post-wrapper" -->
+        </div> <!-- end div "main-container" -->
+    </section>
 {% endblock %}
