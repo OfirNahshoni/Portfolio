@@ -12,6 +12,7 @@ class Tag(models.Model):
 class Post(models.Model):
     headline = models.CharField(max_length=80)
     sub_headline = models.CharField(max_length=200, null=True)
+    repo_link = models.CharField(max_length=150, null=True)
     # thumbnail = 
     body = models.TextField(null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
