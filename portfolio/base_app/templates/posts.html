@@ -15,22 +15,17 @@
     <section class="s2">
         <div class="main-container">
             <div class="post-wrapper">
-
                 <!-- Loop through posts -->
                 {% for post in posts %}
                     <div>
                         <div class="post">
-                            <img class="thumbnail" src="{% static 'images/dash.png' %}">
+                            <img class="thumbnail" src="{{ post.thumbnail.url }}">
                             <div class="post-preview">
                                 <h6 class="post-title">{{ post.headline }}</h6>
                                 <p class="post-content">{{ post.sub_headline }}</p>
-                                
                                 <hr>
-                                
-                                <a href="{% url 'post' %}">Read More</a>
-                                
+                                <a href="{% url 'post' post.id %}">Read More</a>
                                 <hr>
-                                
                                 {% if post.repo_link != '#' %}
                                     <a target="_blank" href="{{ post.repo_link }}">
                                         GitHub Repository
@@ -38,9 +33,7 @@
                                 {% else %}
                                     <h2 align="center">No Repo exists</h2>
                                 {% endif %}
-                                
                                 <hr>
-
                                 {% for tag in post.tags.all %}
                                     <span class="tag">{{ tag }}</span>
                                 {% endfor %}
@@ -50,7 +43,6 @@
                     {% empty %}
                         <h2>No posts found</h2>
                 {% endfor %}
-                
             </div> <!-- end div "post-wrapper" -->
         </div> <!-- end div "main-container" -->
     </section>

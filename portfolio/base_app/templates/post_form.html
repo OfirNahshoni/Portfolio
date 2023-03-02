@@ -1,0 +1,16 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block title %}Post Form{% endblock title %}
+
+{% block content %}
+<div class="main-container">
+    <h2>Post Form</h2>
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Submit Post">
+    </form>
+</div>
+{% endblock content %}

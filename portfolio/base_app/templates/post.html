@@ -4,23 +4,20 @@
     
 {% block content %}
     <section class="s1">
-    <div class="main-container">
-        <h1>Post Title</h1>
-        
-        <hr>
-        
-        <img src="{% static 'images/notes_master_home.png' %}" width="600" height="300">
-        
-        <hr>
-
-        <p>
-            Web application - Backend with Flask
-            and Frontend with HTML and little bit of JavaScript.
-            On the Backend side I used login_required decorate to
-            authentication and the flask_login module of Flask.
-            All the WT-Forms (Flask Forms) and the validation
-            was done with wtforms.validators module.
-        </p>
-    </div>
-</section>
+        <div class="main-container">
+            <h1 align="center">{{ post.headline }}</h1>
+            <h3>{{ post.sub_headline }}</h3>
+            <hr>
+            <!-- Get in here the recorded video -->
+            <div class="post-wrapper">
+                <div>
+                    <div class="post">
+                        <img class="thumbnail" src="{{ post.thumbnail.url }}" width="600" height="300">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p>{{ post.body|linebreaks }}</p>
+        </div>
+    </section>
 {% endblock %}
