@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+    <div class="main-container">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>Are you sure you want to delete the post '{{ item }}'?</p>
+            <input class="btn btn-danger" type="submit" value="Confirm">
+        </form>
+    </div>
+{% endblock content %}
