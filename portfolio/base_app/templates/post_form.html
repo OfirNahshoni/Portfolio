@@ -24,6 +24,8 @@
     <section>
     <section class="s2">
         <div class="main-container">
+            {% csrf_token %}
+            {{ form.media }}
             {% crispy form %}
         </div>
     <section>

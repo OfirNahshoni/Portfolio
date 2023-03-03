@@ -43,9 +43,6 @@ def post(request, slug):
     context = {'post': post}
     return render(request, 'post.html', context=context)
 
-def profile(request):
-    return render(request, 'profile.html')
-
 # CRUD Views - Create , Update , Delete
 
 @login_required(login_url="home")
