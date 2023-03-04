@@ -6,7 +6,7 @@ The project is for recruiters to reach me out - There is a Contact Form on main 
 
 # Installation
 Write in CMD the following:<br/>
-env\Scripts\activate { This is getting in the virtual enviroment }<br />
+env\Scripts\activate { Activate the virtual enviroment }<br />
 cd portfolio { Navigate to Django project folder ('portfolio') }<br />
 python manage.py runserver { Run the Server to get a URL }<br />
 
