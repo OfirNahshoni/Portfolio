@@ -15,3 +15,13 @@ Database with sqlite3 (default of Django Framework) structure:<br />
 Graph image<br/>
 Directories and files structure:<br />
 Tree or Graph image<br/>
+
+# Features
+
+# Functionality
+
+# Contact me
+Name: Ofir Nahshoni<br />
+State: Israel<br />
+Email: ofirnahnn221@gmail.com<br />
+Phone: 052-5699466<br />
