@@ -4,11 +4,13 @@
 {% block title %}{% endblock title %}
 
 {% block content %}
-    <div class="main-container">
-        <form action="" method="POST">
-            {% csrf_token %}
-            <p>Are you sure you want to delete the post '{{ item }}'?</p>
-            <input class="btn btn-danger" type="submit" value="Confirm">
-        </form>
-    </div>
+    <section class="s2">
+        <div class="main-container">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <p>Are you sure you want to delete the post '{{ item }}'?</p>
+                <input class="btn btn-danger" type="submit" value="Confirm">
+            </form>
+        </div>
+    <section>
 {% endblock content %}
