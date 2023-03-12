@@ -39,7 +39,7 @@
                             {% if post.thumbnail.url is not none %}
                                 <img class="thumbnail" src="{{ post.thumbnail.url }}">
                             {% else %}
-                                <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
+                                <img class="thumbnail" src="{% static 'media/placeholder.png' %}">
                             {% endif %}
                             <div class="post-preview">
                                 <h6 class="post-title">{{ post.headline }}</h6>

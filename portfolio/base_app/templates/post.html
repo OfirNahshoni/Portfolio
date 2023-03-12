@@ -5,23 +5,31 @@
 {% block content %}
     <section class="s1">
         <div class="main-container">
-            <h1 align="center">{{ post.headline }}</h1>
-            <h3>{{ post.sub_headline }}</h3>
+            <h2 align="center">{{ post.headline }}</h2>
+            <h3 align="center">{{ post.sub_headline }}</h3>
             <hr>
-            <!-- Get in here the recorded video -->
-            <div class="post-wrapper">
-                <div>
-                    <div class="post">
-                        {% if post.thumbnail.url is not none %}
-                            <img class="thumbnail" src="{{ post.thumbnail.url }}">
-                        {% else %}
-                            <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
-                        {% endif %}
+            <p>{{ post.body|safe }}</p>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="s2">
+        <div class="main-container">
+            <div class="container" align="center">
+                <div class="row">
+                    <div class="col">
+                        <div class="video-section">
+                            {% if post.video %}
+                                <video width="80%" controls id="myVideo">
+                                    <source src="{{ post.video.url }}" type="video/mp4">
+                                </video>
+                            {% else %}
+                                <h4 align="center">No video overview found</h4>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
-            <hr>
-            <p>{{ post.body|safe }}</p>
         </div>
     </section>
 {% endblock %}

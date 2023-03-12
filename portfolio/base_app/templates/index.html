@@ -16,7 +16,7 @@
             <div class="intro-wrapper">
                 <!-- Image\s -->
                 <div class="left-col">
-                    <img id="profile-img" src="{% static 'images/me1.jpeg' %}">
+                    <img id="profile-img" src="{% static 'media/profile.jpeg' %}">
                     <h5>Press Color to Change Theme</h5>
                     <div id="theme-options-wrapper">
                         <div data-mode="light" id="light-mode" class="theme-dot"></div>
@@ -53,46 +53,38 @@
     <!-- Section 2 - About Me -->
     <section class="s2">
         <div class="main-container">
+            <h1 align="center">My Story</h1>
             <div class="about-wrapper">
                 <div class="about-me">
-                    <h3>My Story</h3>
-                    <p>I love fullstack very much!</p>
-                    <p>CSS with HTML is the best!</p>
-
+                    <p>Very motivated, self learner Software developer</p>
+                    <p>I am looking for an interesting position as a FullStack or embedded Software Engineer</p>
+                    <p>I am at my 4th year of Bsc degree in Computer Engineering</p>
                     <hr>
-
-                    <h4>My Skills</h4>
-                    <p>FullStack Developer, focused on Django, Flask<br />
-                        Micro Frameworks
-                        <a target="_blank" href="{% static 'myresume.pdf' %}">
+                    <h3>CV</h3>
+                    <p>FullStack positions
+                                <a target="_blank" href="{% static 'files/myresume_fullstack.pdf' %}">
+                                    <button class="btn btn-primary">Download Resume</button>
+                                </a>
+                            </p>
+                    <p>Embedded positions
+                        <a target="_blank" href="{% static 'files/myresume_embedded.pdf' %}">
                             <button class="btn btn-primary">Download Resume</button>
                         </a>
                     </p>
+                    <hr>
+                    <h3>Skills</h3>
                     <div id="skills">
                         <ul>
-                            <li>C</li>
-                            <li>C++</li>
-                            <li>C#</li>
-                            <li>Python</li>
-                            <li>HTML5 & CSS</li>
-                            <li>JavaScript</li>
-                            <li>MATLAB</li>
-                        </ul>
-                        <ul>
-                            <li>Django</li>
-                            <li>Flask</li>
-                            <li>Node</li>
-                            <li>React</li>
-                            <li>Verilog</li>
-                            <li>Raspberry PI</li>
-                            <li>ESP</li>
+                            {% for tag in tags %}
+                                <li>{{ tag.name }}</li>
+                            {% endfor %}
                         </ul>
                     </div>
-
                 </div> <!-- end div "about-me" -->
 
                 <div class="social-links">
-                    <img id="social_img" src="{% static 'images/linkedin_profile.png' %}">
+                    <h3>Social Media</h3>
+                    <img id="social_img" src="{% static 'media/linkedin_profile.png' %}">
                     <hr>
                     <a target="_blank" href="https://www.linkedin.com/in/ofir-nahshoni-fullstack/">My LinkedIn profile</a>
                     <hr>
@@ -106,7 +98,7 @@
     <!-- Section 3 - Some of My Projects -->
     <section class="s1">
         <div class="main-container">
-            <h3 style="text-align: center;">Here are some of My Projects</h3>
+            <h1 style="text-align: center;">Some of My Projects</h1>
             <div class="post-wrapper">
                 {% for post in posts %}
                     <div>
@@ -114,7 +106,7 @@
                             {% if post.thumbnail.url is not none %}
                                 <img class="thumbnail" src="{{ post.thumbnail.url }}">
                             {% else %}
-                                <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
+                                <img class="thumbnail" src="{% static 'media/placeholder.png' %}">
                             {% endif %}
                             <div class="post-preview">
                                 <h6 class="post-title">{{ post.headline }}</h6>
@@ -134,14 +126,11 @@
                         </div>
                     </div>
                     {% empty %}
-                        <h2>No posts found</h2>
+                        <h3 align="center">No posts found</h3>
                 {% endfor %}
-            <hr>
-            <p align="center">
-                <a href="{% url 'posts' %}">View all Projects</a>
-            </p>
             </div>
             <!-- Link to see all projects -->
+            <h5 align="center"><a href="{% url 'posts' %}">View more projects</a></h5>
         </div>
     </section>
 

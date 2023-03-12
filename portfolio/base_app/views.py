@@ -9,14 +9,15 @@ from django.template.loader import render_to_string
 
 from . import views
 
-from .models import Post
+from .models import Post, Tag
 from .forms import PostForm
 from .filters import PostFilter
 
 def home(request):
     posts = Post.objects.filter(is_active=True, featured=True)[0:3]
+    tags = Tag.objects.all()
 
-    context = {'posts': posts}
+    context = {'posts': posts, 'tags': tags}
     return render(request, 'index.html', context=context)
 
 def posts(request):
@@ -52,7 +53,7 @@ def createPost(request):
     # Handle POST request
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
-        # Check
+        # Check validation
         if form.is_valid():
             form.save()
         return redirect('posts')
@@ -85,11 +86,11 @@ def deletePost(request, slug):
         post.delete()
         return redirect('posts')
 
-    context = {'item': post}
+    context = {'post': post}
     return render(request, 'delete_post.html', context=context)
 
 
-# Sending Email (from Contact Form)
+# Sending Email (from Contact Form in home page)
 def sendEmail(request):
     if request.method == 'POST':
         template = render_to_string('email_template.html', {

@@ -14,7 +14,7 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = '__all__'
-        # For the Tags list - Checkbox instead of just a list
+        # For the Tags list (Checkbox instead of just a list)
         widgets = {
             'tags': forms.CheckboxSelectMultiple(),
         }

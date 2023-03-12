@@ -13,6 +13,8 @@
     --previewShadow: #f0ead6;
 
     --buttonColor: black;
+
+    --skillsArea: #1a8dff;
 }
 
 html, body {
@@ -327,10 +329,10 @@ h6 {font-size: 16px;}
 }
 
 #skills {
-    display: flex;
-    /* color: black; */
-    justify-content: space-evenly;
-    background-color: #58ddf2;
+    display: flexbox;
+    justify-content: left;
+    background-color: var(--skillsArea);
+    width: 40%;
 }
 
 .social-links {
@@ -474,4 +476,20 @@ h6 {font-size: 16px;}
     .right-col {
         justify-content: center;
     }
+}
+
+.container {
+    width: 80%;
+    margin: 80px auto;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex-basis: 100%;
+    min-width: 250px;
 }

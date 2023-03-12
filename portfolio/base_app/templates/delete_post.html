@@ -8,7 +8,7 @@
         <div class="main-container">
             <form action="" method="POST">
                 {% csrf_token %}
-                <p>Are you sure you want to delete the post '{{ item }}'?</p>
+                <p>Are you sure you want to delete the post '{{ post.headline }}'?</p>
                 <input class="btn btn-danger" type="submit" value="Confirm">
             </form>
         </div>
