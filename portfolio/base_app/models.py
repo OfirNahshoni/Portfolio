@@ -5,18 +5,21 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 
+
 class Tag(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
-    
+
 
 class Post(models.Model):
     headline = models.CharField(max_length=80)
     sub_headline = models.CharField(max_length=200, null=True)
-    repo_link = models.CharField(max_length=150, null=True, default='#')
-    thumbnail = models.ImageField(null=True, blank=True, upload_to="images", default="placeholder.png")
+    repo_link = models.CharField(max_length=150, null=True, default="#")
+    thumbnail = models.ImageField(
+        null=True, blank=True, upload_to="images", default="placeholder.png"
+    )
     video = models.FileField(null=True, blank=True, upload_to="videos")
     body = RichTextUploadingField(null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
@@ -36,9 +39,9 @@ class Post(models.Model):
             count = 1
             while has_slug:
                 count += 1
-                slug = slugify(self.headline) + '-' + str(count)
+                slug = slugify(self.headline) + "-" + str(count)
                 has_slug = Post.objects.filter(slug=slug).exists()
-            
+
             self.slug = slug
-        
+
         super().save(*args, **kwargs)

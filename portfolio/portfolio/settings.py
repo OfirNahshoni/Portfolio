@@ -128,13 +128,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+# Set base dir for static files in each app
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+# Set base dir where static files will be collected for deployment
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media/')
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets/')
 
@@ -143,6 +144,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587

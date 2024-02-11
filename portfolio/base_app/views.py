@@ -56,6 +56,7 @@ def createPost(request):
         # Check validation
         if form.is_valid():
             form.save()
+            
         return redirect('posts')
 
     context = {'form': form}
