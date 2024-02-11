@@ -18,6 +18,11 @@ Tree or Graph image<br/>
 
 # Features
 
+<img width="913" alt="image" src="https://user-images.githubusercontent.com/58309185/228675997-f4a4757d-0024-4120-bae8-618899ede469.png">
+
+<img width="926" alt="image" src="https://user-images.githubusercontent.com/58309185/228676108-834e0a42-9b6a-4b8c-af82-4c49e70010bf.png">
+
+
 # Functionality
 
 # Contact me
